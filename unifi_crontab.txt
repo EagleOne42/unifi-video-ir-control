@@ -1,0 +1,3 @@
+00 03 * * * /home/jono/git_repos/unifi_uvc_ir_control/unifi_sunrise_sunset_ir_control.sh sunrise >> /var/log/unifi_auto_ir.log
+30 15 * * * /home/jono/git_repos/unifi_uvc_ir_control/unifi_sunrise_sunset_ir_control.sh sunset >> /var/log/unifi_auto_ir.log
+
