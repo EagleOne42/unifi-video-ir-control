@@ -1,0 +1,57 @@
+# Tested with Unifi Video 3.10.13 (also used on prior 3.10.x releases) on Ubuntu 16.04.6 LTS
+
+# Make a directory to keep the git repos in. This can be done with your user account
+mdkir ~/git_repos && cd ~/git_repos
+
+git clone https://github.com/EagleOne42/unifi_video_ir_control.git
+git clone https://github.com/yuppity/unifi-video-api.git
+git clone https://github.com/risacher/sunwait.git
+
+# Need to compile sunwait and copy
+cd sunwait/
+make sunwait
+chmod +x sunwait
+cp sunwait /usr/local/bin/sunwait
+
+# Adjust the API compatable version to make your install if needed
+vim ~/git_repos/unifi-video-api/unifi_video/api.py
+# Find the line with "_supported_ufv_version_ranges" and modify to your Unifi Video Server version Number
+
+# Copy the .env_unifi file and set permissions
+cp ~/git_repos/unifi_uvc_ir_control/.env_unifi ~/.env_unifi
+chmod 660 ~/.env_unifi
+chown $USER:$USER ~/.env_unifi
+
+# Open the file and fill in the details
+## Need to get an API key from Unifi Video and add to the ~/.env_unifi file
+## Update the latitude and liongitude for your camera's location
+## Set your cameras name as it is in Unifi Video
+
+nano ~/.env_unifi
+# or
+vim ~/.env_unifi
+
+# Make a log file for the cron
+sudo touch /var/log/unifi_auto_ir.log
+sudo chown $USER:$USER /var/log/unifi_auto_ir.log
+chmod 664 /var/log/unifi_auto_ir.log
+
+cat ~/git_repos/unifi_uvc_ir_control/unifi_crontab.txt
+# Copy these two lines then we can paste them into crontab
+crontab -e
+# Paste the lines - make sure there is a blank line after them - save your edit
+
+# To manually test the API run this:
+# Open a browser or app to view the camera
+# On the unifi system load the env info
+source ~/.env_unifi
+
+# Use any of these to set the IR and confirm that it changes and you don't get errors
+~/git_repos/unifi_uvc_ir_control/unifi_ir_control.py auto
+~/git_repos/unifi_uvc_ir_control/unifi_ir_control.py on
+~/git_repos/unifi_uvc_ir_control/unifi_ir_control.py off
+
+# To manually test the main sunwait script try these:
+~/git_repos/unifi_uvc_ir_control/unifi_sunrise_sunset_ir_control.sh sunrise
+~/git_repos/unifi_uvc_ir_control/unifi_sunrise_sunset_ir_control.sh sunset
+# Depending on the time you run these they will complete and change the the IR setting or will pause until the time listed for that event
