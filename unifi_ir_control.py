@@ -1,7 +1,7 @@
-#Jonathan Hornung
-#2019-07-18
-#Unifi API IR Control
-#Version 1.0
+# Jonathan Hornung
+# 2019-07-18
+# Unifi API IR Control
+# Version 1.0
 
 from unifi_video import UnifiVideoAPI
 import os
@@ -20,7 +20,7 @@ control_option = sys.argv[1]
 #uva = UnifiVideoAPI(api_key, addr='10.10.11.91')
 
 # Use HTTPS and skip cert verification
-#uva = UnifiVideoAPI(api_key, addr=unifi_hostname,
+# uva = UnifiVideoAPI(api_key, addr=unifi_hostname,
 #  port=7443, schema='https', verify_cert=False)
 
 #Use HTTPS
