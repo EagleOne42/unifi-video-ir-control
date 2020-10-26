@@ -14,4 +14,10 @@ https://github.com/yuppity/unifi-video-api
 A program that will caculate sunset/sunrise times based on location:
 https://github.com/risacher/sunwait
 
-Follow the steps in "SETUP" to get this setup and configured on Ubuntu 16.04. Other systems might need additional steps.
+Follow the steps in "SETUP" to get this setup and configured on Ubuntu 16.04.7 LTS. Other systems might need additional steps.
+
+Requirements:
+Ubuntu 16.04.7 LTS (xenial)
+Unifi Video 3.10.13 (current as of 2020-10-26)
+Python 3.5.2
+

@@ -1,4 +1,4 @@
-# Tested with Unifi Video 3.10.13 (also used on prior 3.10.x releases) on Ubuntu 16.04.6 LTS
+# Tested with Unifi Video 3.10.13 (also used on prior 3.10.x releases) on Ubuntu 16.04.7 LTS
 
 # Make a directory to keep the git repos in. This can be done with your user account
 mdkir ~/git_repos && cd ~/git_repos
