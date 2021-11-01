@@ -55,3 +55,4 @@ source ~/.env_unifi
 ~/git_repos/unifi_uvc_ir_control/unifi_sunrise_sunset_ir_control.sh sunrise
 ~/git_repos/unifi_uvc_ir_control/unifi_sunrise_sunset_ir_control.sh sunset
 # Depending on the time you run these they will complete and change the the IR setting or will pause until the time listed for that event
+
