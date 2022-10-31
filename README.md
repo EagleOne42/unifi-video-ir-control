@@ -2,6 +2,8 @@
 
 Unifi Video is no longer getting updates. There will probably not be many updates for this script as the current is still working for me, but planning on replacing with another system in the future.
 
+2022-10-30 - I have not been using this now for over a year since moving. Camera and local VM might be used again in the future.
+
 NOTE: While this should work, you might need some tweaks for now. Still need to update the info and confirm working with these directions from a clean install
 
 Directions and scripts to schedule turning the IR on and off based on estimated sunset and sunrise times for Unifi Video cameras.
